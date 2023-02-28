@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // VSCodeのビルトインのフォーマッタではなくprettierをフォーマッタに指定する
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true, // ファイル保存時にStylelintでフォーマット
+    "source.fixAll.eslint": true, // ファイル保存時にESLintでフォーマット
+    "source.addMissingImports": true // ファイル保存時にアプリケーション内で使っているモジュールがまだimportされていないときに自動で探してimport文を足してくれる設定
+  },
+  "typescript.tsdk": "QandA/frontend/node_modules/typescript/lib"
+}
