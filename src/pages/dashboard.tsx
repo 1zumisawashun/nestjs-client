@@ -4,9 +4,9 @@ import axios from "axios";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { Layout } from "../components/Layout";
-// import { TaskForm } from "../components/TaskForm";
-// import { TaskList } from "../components/TaskList";
-// import { UserInfo } from "../components/UserInfo";
+import { TaskForm } from "../components/TaskForm";
+import { TaskList } from "../components/TaskList";
+import { UserInfo } from "../components/UserInfo";
 
 const Dashboard: NextPage = () => {
   const router = useRouter();
@@ -23,9 +23,10 @@ const Dashboard: NextPage = () => {
         className="mb-6 h-6 w-6 cursor-pointer text-blue-500"
         onClick={logout}
       />
-      {/* <UserInfo />
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <UserInfo />
       <TaskForm />
-      <TaskList /> */}
+      <TaskList />
     </Layout>
   );
 };
