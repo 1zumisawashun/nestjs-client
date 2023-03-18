@@ -14,6 +14,15 @@
     "./src/graphql/generated/schema.graphql": {
       "schema": "http://localhost:3000/api/graphql",
       "plugins": ["schema-ast"]
+    },
+    "./src/graphql/generated/operations.ts": {
+      "schema": "http://localhost:3000/api/graphql",
+      "documents": "./src/graphql/operations/**/*.graphql",
+      "plugins": [
+        "typescript",
+        "typescript-operations",
+        "typescript-react-apollo"
+      ]
     }
   }
 }

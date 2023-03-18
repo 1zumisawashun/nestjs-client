@@ -1,32 +1,24 @@
-"""
-作者
-"""
+"""作者"""
 type Author {
   id: ID!
   name: String!
 }
 
-"""
-バナー
-"""
+"""バナー"""
 type Banner {
   groupId: ID!
   href: String
   id: ID!
 }
 
-"""
-クエリーの一覧
-"""
+"""クエリーの一覧"""
 type Query {
   banners(groupId: ID!): [Banner]!
   status(id: ID!): Status
   statuses: [Status]!
 }
 
-"""
-つぶやき
-"""
+"""つぶやき"""
 type Status {
   author: Author
   body: String!

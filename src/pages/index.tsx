@@ -17,6 +17,7 @@ import { useState } from "react";
 import * as Yup from "yup";
 import { Layout } from "../components/Layout";
 import { AuthForm } from "../types";
+import { useHomePagePropsQuery } from "graphql/generated/operations";
 
 const schema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("No email provided"),
@@ -26,6 +27,10 @@ const schema = Yup.object().shape({
 });
 
 const Home: NextPage = () => {
+  const { data } = useHomePagePropsQuery({
+    variables: { bannerGroupId: "1" },
+  });
+  console.log(data, "===============");
   const router = useRouter();
   const [isRegister, setIsRegister] = useState(false);
   const [error, setError] = useState("");
