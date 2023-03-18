@@ -25,4 +25,26 @@ model User {
   hashedPassword String
   nickName       String?
   Task           Task[]
+  Upvote         Upvote[]
+  Vote           Vote[]
+}
+
+model Upvote {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  voteId    Int
+  userId    Int
+  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Vote      Vote     @relation(fields: [voteId], references: [id], onDelete: Cascade)
+}
+
+model Vote {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  text      String
+  userId    Int
+  Upvote    Upvote[]
+  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

@@ -9,6 +9,23 @@
     "plugin:import/recommended",
     "plugin:import/typescript"
   ],
+  "overrides": [
+    {
+      "files": ["./src/graphql/operations/**/*.graphql"],
+      "parserOptions": {
+        "operations": "./src/graphql/operations/**/*.graphql",
+        "schema": "./src/graphql/generated/schema.graphql"
+      },
+      "extends": "plugin:@graphql-eslint/operations-recommended"
+    },
+    {
+      "files": ["./src/graphql/schema/**/*.graphql"],
+      "parserOptions": {
+        "schema": "./src/graphql/schema/**/*.graphql"
+      },
+      "extends": "plugin:@graphql-eslint/schema-recommended"
+    }
+  ],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "import/order": [

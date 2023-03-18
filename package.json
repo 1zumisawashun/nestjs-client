@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run gen && next build",
     "start": "next start",
     "lint": "next lint --dir src",
-    "format": "next lint --fix --dir src"
+    "format": "next lint --fix --dir src",
+    "gen": "npx graphql-codegen"
   },
   "dependencies": {
     "@emotion/react": "11.10.0",
@@ -24,6 +25,7 @@
     "@tabler/icons": "1.78.1",
     "@tanstack/react-query": "4.0.10",
     "@tanstack/react-query-devtools": "4.0.10",
+    "apollo-server-micro": "^3.12.0",
     "axios": "0.27.2",
     "next": "12.3.0",
     "react": "18.2.0",
@@ -36,6 +38,11 @@
     "zustand": "4.0.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^3.2.2",
+    "@graphql-codegen/schema-ast": "^3.0.1",
+    "@graphql-codegen/typescript": "^3.0.2",
+    "@graphql-codegen/typescript-resolvers": "^3.1.1",
+    "@graphql-eslint/eslint-plugin": "^3.16.1",
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "@types/node": "18.7.16",
     "@types/react": "18.0.18",

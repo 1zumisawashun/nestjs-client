@@ -1,0 +1,35 @@
+"""
+クエリーの一覧
+"""
+type Query {
+  status(id: ID!): Status
+  statuses: [Status]!
+  banners(groupId: ID!): [Banner]!
+}
+
+"""
+つぶやき
+"""
+type Status {
+  id: ID!
+  body: String!
+  author: Author
+  createdAt: String!
+}
+
+"""
+作者
+"""
+type Author {
+  id: ID!
+  name: String!
+}
+
+"""
+バナー
+"""
+type Banner {
+  id: ID!
+  groupId: ID!
+  href: String
+}
